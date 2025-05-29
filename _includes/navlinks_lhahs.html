@@ -25,9 +25,9 @@
 	{% for post in site.posts reversed %}	
 		{% if post.tags contains 'lhahs' %}
 			{% if post.url == page.url %}
-				<option value="{{post.url}}">{{post.title}}</option>
-			{%- else -%}
 				<option value="{{post.url}}" selected="selected">{{post.title}}</option>
+			{%- else -%}
+				<option value="{{post.url}}">{{post.title}}</option>
 			{% endif %}
 		{% endif %}
 	{% endfor %}
