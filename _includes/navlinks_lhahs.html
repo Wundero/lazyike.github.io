@@ -24,8 +24,12 @@
 <select class="cmb"  onchange="location = this.value;" style="width: 350px">
 	{% for post in site.posts reversed %}	
 		{% if post.tags contains 'lhahs' %}
-			<option value="{{post.url}}">{{post.title}}</option>
-		{% endif %}				
+			{% if post.url == page.url %}
+				<option value="{{post.url}}">{{post.title}}</option>
+			{%- else -%}
+				<option value="{{post.url}}" selected="selected">{{post.title}}</option>
+			{% endif %}
+		{% endif %}
 	{% endfor %}
 </select> 
 <p><br /></p>
